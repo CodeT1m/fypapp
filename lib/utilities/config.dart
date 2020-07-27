@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 Color primaryGreen = Color(0xFF416D6D);
 
 List<BoxShadow> shadowList = [
@@ -10,7 +8,10 @@ List<BoxShadow> shadowList = [
 ];
 
 List<Map> categories = [
-  {'name': 'Apple', 'icon': 'lib/images/apple.png'},
+  {
+    'name': 'Apple',
+    'icon': 'lib/images/apple.png',
+  },
   {'name': 'Cherry', 'icon': 'lib/images/cherry.png'},
   {'name': 'Grape', 'icon': 'lib/images/grape.png'},
   {'name': 'Maize', 'icon': 'lib/images/maize.png'},
@@ -21,5 +22,4 @@ List<Map> categories = [
   {'name': 'Strawberry', 'icon': 'lib/images/strawberry.png'},
   {'name': 'Squash', 'icon': 'lib/images/squash.png'},
   {'name': 'Tomato', 'icon': 'lib/images/tomato.png'},
-  
 ];
