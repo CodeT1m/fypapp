@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plant_tab.dart';
 import 'package:fypapp/screens/plant_tabs/apple_list.dart';
 import 'package:fypapp/screens/plant_tabs/cherry_list.dart';
@@ -66,7 +67,8 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/apple.png",
-                    plantName: "Apple",
+                    //plantName: "Apple",
+                    plantName: getTranslated(context, 'apple'),
                     colorVal:
                         tabController.index == 0 ? Colors.green : Colors.grey,
                   ),
@@ -74,7 +76,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/cherry.png",
-                    plantName: "Cherry",
+                    plantName: getTranslated(context, 'cherry'),
                     colorVal:
                         tabController.index == 1 ? Colors.green : Colors.grey,
                   ),
@@ -82,7 +84,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/grape.png",
-                    plantName: "Grape",
+                    plantName: getTranslated(context, 'grape'),
                     colorVal:
                         tabController.index == 2 ? Colors.green : Colors.grey,
                   ),
@@ -90,7 +92,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/maize.png",
-                    plantName: "Maize",
+                    plantName: getTranslated(context, 'maize'),
                     colorVal:
                         tabController.index == 3 ? Colors.green : Colors.grey,
                   ),
@@ -98,7 +100,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/peach.png",
-                    plantName: "Peach",
+                    plantName: getTranslated(context, 'peach'),
                     colorVal:
                         tabController.index == 4 ? Colors.green : Colors.grey,
                   ),
@@ -106,7 +108,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/pepper.png",
-                    plantName: "Pepper",
+                    plantName: getTranslated(context, 'pepper'),
                     colorVal:
                         tabController.index == 5 ? Colors.green : Colors.grey,
                   ),
@@ -114,7 +116,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/potato.png",
-                    plantName: "Potato",
+                    plantName: getTranslated(context, 'potato'),
                     colorVal:
                         tabController.index == 6 ? Colors.green : Colors.grey,
                   ),
@@ -130,7 +132,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/strawberry.png",
-                    plantName: "Strawberry",
+                    plantName: getTranslated(context, 'strawberry'),
                     colorVal:
                         tabController.index == 7 ? Colors.green : Colors.grey,
                   ),
@@ -138,7 +140,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/squash.png",
-                    plantName: "Squash",
+                    plantName: getTranslated(context, 'squash'),
                     colorVal:
                         tabController.index == 8 ? Colors.green : Colors.grey,
                   ),
@@ -146,7 +148,7 @@ class _AppleState extends State<Apple> with SingleTickerProviderStateMixin {
                 Tab(
                   child: PlantTopTab(
                     plantIcon: "lib/images/tomato.png",
-                    plantName: "Tomato",
+                    plantName: getTranslated(context, 'tomato'),
                     colorVal:
                         tabController.index == 9 ? Colors.green : Colors.grey,
                   ),

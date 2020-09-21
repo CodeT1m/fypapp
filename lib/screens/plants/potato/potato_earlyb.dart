@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class POEBdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _POEBdiseaseState extends State<POEBdisease> {
       img2: 'lib/images/potato/poeb2.JPG',
       img3: 'lib/images/potato/poeb3.JPG',
       diseaseTitle: "po_eb",
-      diseaseName: "Potato Early blight",
+      diseaseName: getTranslated(context, 'potato_early_blight'),
       sName: "Alternaria solani.",
-      c0: "Potato Early blight is a disease caused by the fungal pathogen \'Alternaria solani\', and can result in considerable defoliation and enhance the chance for tuber infection if left uncontrolled.",
-      c1: "1. Prune or stake plants to improve air circulation and reduce fungal problems.",
-      c2: "2. Keep the soil under plants clean and free of garden debris.",
-      c3: "3. Avoid overhead irrigation and allow for sufficient aeration between plants to allow the foliage to dry as quickly as possible.",
+      c0: getTranslated(context, 'poeb0'),
+      c1: "1. ${getTranslated(context, 'poeb1')}",
+      c2: "2. ${getTranslated(context, 'poeb2')}",
+      c3: "3. ${getTranslated(context, 'poeb3')}",
       link:
           "https://www.planetnatural.com/pest-problem-solver/plant-disease/early-blight/",
     );

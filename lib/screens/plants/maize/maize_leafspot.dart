@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class MLSdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _MLSdiseaseState extends State<MLSdisease> {
       img2: 'lib/images/maize/mLs2.JPG',
       img3: 'lib/images/maize/mLs3.JPG',
       diseaseTitle: "mLs",
-      diseaseName: "Maize Gray Leaf Spot",
+      diseaseName: getTranslated(context, 'maize_spot'),
       sName: "Cercospora zeae-maydis.",
-      c0: "Gray Leaf spot is a fungal disease that affects corn caused by the pathogen \'Cercospora zeae-maydis\'.",
-      c1: "1. During the growing season, foliar fungicides can be used to manage gray leaf spot outbreaks.",
-      c2: "2. Planting hybrids with a high level of genetic resistance can help reduce the risk of yield loss due to gray leaf spot infection.",
-      c3: "3. Susceptible cultivars should not be planted within 100 yards of the previous year's infected crop.",
+      c0: getTranslated(context, 'mls0'),
+      c1: "1. ${getTranslated(context, 'mls1')}",
+      c2: "2. ${getTranslated(context, 'mls2')}",
+      c3: "3. ${getTranslated(context, 'mls3')}",
       link:
           "https://cropwatch.unl.edu/plantdisease/sugarbeet/cercospora-leaf-spot",
     );

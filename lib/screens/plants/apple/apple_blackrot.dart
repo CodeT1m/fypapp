@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class ABRdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _ABRdiseaseState extends State<ABRdisease> {
       img2: 'lib/images/apple/abr2.JPG',
       img3: 'lib/images/apple/abr3.JPG',
       diseaseTitle: "abr",
-      diseaseName: "Apple - Black rot",
+      diseaseName: getTranslated(context, 'apple_black_rot'),
       sName: "Diplodia seriata",
-      c0: "Black rot is caused by the fungus \'Diplodia seriata\' (syn Botryosphaeria obtusa).\n A fungal disease that requires juniper plants to complete its complicated two year life-cycle.",
-      c1: "1. Remove cankers during dormant season by pruning at least 15 inches below the end and burn them.",
-      c2: "2. Remove any injured or insect-invaded fruits to avoid re-infection.",
-      c3: "3. Using copper-based fungicide will protect against both black rot and fire blight.",
+      c0: getTranslated(context, 'abr0'),
+      c1: "1. ${getTranslated(context, 'abr1')}",
+      c2: "2. ${getTranslated(context, 'abr2')}",
+      c3: "3. ${getTranslated(context, 'abr3')}",
       link: "https://extension.umn.edu/plant-diseases/black-rot-apple",
     );
   }

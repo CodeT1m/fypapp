@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class POLBdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _POLBdiseaseState extends State<POLBdisease> {
       img2: 'lib/images/potato/poLb2.JPG',
       img3: 'lib/images/potato/poLb3.JPG',
       diseaseTitle: "po_Lb",
-      diseaseName: "Potato Late blight",
+      diseaseName: getTranslated(context, 'potato_late_blight'),
       sName: "Phytophthora infestans.",
-      c0: "Potato Late blight is a disease caused by a microorganism called \'Phytophthora infestans\'.",
-      c1: "1. Do not mix seed lots because cutting can transmit late blight.",
-      c2: "2. Avoid planting problem areas that may remain wet for extended periods or may be difficult to spray.",
-      c3: "3. Applying phosphorous acid to potatoes after harvest and before piling can prevent infection and the spread of late blight in storage.",
+      c0: getTranslated(context, 'polb0'),
+      c1: "1. ${getTranslated(context, 'polb1')}",
+      c2: "2. ${getTranslated(context, 'polb2')}",
+      c3: "3. ${getTranslated(context, 'polb3')}",
       link: "https://www.ag.ndsu.edu/publications/crops/late-blight-in-potato",
     );
   }

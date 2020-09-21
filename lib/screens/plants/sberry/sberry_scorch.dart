@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class SBERRYLSdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _SBERRYLSdiseaseState extends State<SBERRYLSdisease> {
       img2: 'lib/images/sberry/sberryLs2.JPG',
       img3: 'lib/images/sberry/sberryLs3.JPG',
       diseaseTitle: "sberry_Ls",
-      diseaseName: "Strawberry Leaf scorch",
+      diseaseName: getTranslated(context, 'strawberry_leaf'),
       sName: "Diplocarpon earliana.",
-      c0: "Strawberry Leaf scorch is a disease caused by a fungal infection called \'Diplocarpon earliana\' which affects the foliage of strawberry plantings.",
-      c1: "1. Frequently plant new strawberry transplants.",
-      c2: "2. Cleaning up garden frequently and avoiding waterlogged soil reduces the likelihood of the spread of the fungus.",
-      c3: "3. During planting, ensure proper plant spacing to provide adequate air circulation, and the use of drip irrigation.",
+      c0: getTranslated(context, 'sberryls0'),
+      c1: "1. ${getTranslated(context, 'sberryls1')}",
+      c2: "2. ${getTranslated(context, 'sberryls2')}",
+      c3: "3. ${getTranslated(context, 'sberryls3')}",
       link:
           "https://www.gardeningknowhow.com/edible/fruits/strawberry/strawberries-with-leaf-scorch.htm#:~:text=Scorched%20strawberry%20leaves%20are%20caused,on%20the%20topside%20of%20leaves.",
     );

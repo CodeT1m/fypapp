@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class CPMdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _CPMdiseaseState extends State<CPMdisease> {
       img2: 'lib/images/cherry/cpm2.JPG',
       img3: 'lib/images/cherry/cpm3.JPG',
       diseaseTitle: "cpm",
-      diseaseName: "Cherry Powdery Mildew",
+      diseaseName: getTranslated(context, 'cherry_powdery'),
       sName: "Podosphaera clandestina",
-      c0: "Powdery Mildew is caused by an obligate biotropic fungus called Podosphaera clandestina, Mid- and late-season sweet cherry cultivars are commonly affected.",
-      c1: "1. Potassium bicarbonate is a safe, effective fungicide that kills spores on contact. Spray it unto affected plants.",
-      c2: "2. Combine one table-spoon baking soda and one-half teaspoon of liquid, non-detergent soap with one gallon of water, and spray the mixture liberally on the plants.",
-      c3: "3. Applying a milk treatment of 40% percent milk and 60% water produce free radicals that are toxic to the fungus when they interact with the sun.",
+      c0: getTranslated(context, 'cpm0'),
+      c1: "1. ${getTranslated(context, 'cpm1')}",
+      c2: "2. ${getTranslated(context, 'cpm2')}",
+      c3: "3. ${getTranslated(context, 'cpm3')}",
       link:
           "https://dengarden.com/gardening/Organic-Methods-of-Exterminating-Powdery-Mildew",
     );

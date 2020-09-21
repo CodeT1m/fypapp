@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/maize/maize_leafblight.dart';
 import 'package:fypapp/screens/plants/maize/maize_leafspot.dart';
 import 'package:fypapp/screens/plants/maize/maize_rust.dart';
@@ -13,7 +14,7 @@ class MaizeList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "mLb",
-              diseaseName: "Maize Northern leaf blight",
+              diseaseName: getTranslated(context, 'maize_blight'),
               image: "lib/images/maize/mLb1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -22,7 +23,7 @@ class MaizeList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "mLs",
-              diseaseName: "Maize Gray Leaf Spot",
+              diseaseName: getTranslated(context, 'maize_spot'),
               image: "lib/images/maize/mLs1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -31,7 +32,7 @@ class MaizeList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "mcr",
-              diseaseName: "Maize Common Rust",
+              diseaseName: getTranslated(context, 'maize_common_rust'),
               image: "lib/images/maize/mcr1.JPG",
               onPress: () {
                 Navigator.push(context,

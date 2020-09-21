@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class GEBMdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _GEBMdiseaseState extends State<GEBMdisease> {
       img2: 'lib/images/grape/gebm2.JPG',
       img3: 'lib/images/grape/gebm3.JPG',
       diseaseTitle: "g_ebm",
-      diseaseName: "Grape Esca (Black measles)",
+      diseaseName: getTranslated(context, 'grape_esca'),
       sName: "Guignardia bidwellii.",
-      c0: "Grapevine measles, also called esca, black measles.",
-      c1: "1. Raisins affected by measles should be discarded during harvest.",
-      c2: "2. Chemical control by spraying or painting the trunks and main branches with a sodium arsenite solution.",
-      c3: "3. (Control no. 2) should be applied for 2 consecutive years, at least 2 weeks after pruning and not later than 3 weeks before sprouting.",
+      c0: getTranslated(context, 'gebm0'),
+      c1: "1. ${getTranslated(context, 'gebm1')}",
+      c2: "2. ${getTranslated(context, 'gebm2')}",
+      c3: "3. ${getTranslated(context, 'gebm3')}",
       link: "https://apsjournals.apsnet.org/doi/pdf/10.1094/PDIS.1999.83.5.404",
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/squash/squash_mildew.dart';
 import 'package:fypapp/screens/rectangle.dart';
 
@@ -12,7 +13,7 @@ class SquashList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "squ_pm",
-              diseaseName: "Squash Powdery Mildew",
+              diseaseName: getTranslated(context, 'squash_powdery'),
               image: "lib/images/squash/squpm1.JPG",
               onPress: () {
                 Navigator.push(context,

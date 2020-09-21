@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class ARdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _ARdiseaseState extends State<ARdisease> {
       img2: 'lib/images/apple/ar2.JPG',
       img3: 'lib/images/apple/ar3.JPG',
       diseaseTitle: "ar",
-      diseaseName: "Apple - Cedar Apple Rust",
+      diseaseName: getTranslated(context, 'apple_rust'),
       sName: "Gymnosporangium juniperi-virginianae",
-      c0: "Cedar apple rust is caused by a fungal pathogen called \'Gymnosporangium juniperi-virginianae\'.",
-      c1: "1. Remove galls from infected junipers. In some cases, remove the juniper plants entirely.",
-      c2: "2. Application of fungicides (in July and August) to the junipers before and while they are in the infectious reduces the severity of the outbreak.",
-      c3: "3. Remove cedars located within a 1 mile (1.6 km) radius of the apples to interrupt the disease cycle.",
+      c0: getTranslated(context, 'ar0'),
+      c1: "1. ${getTranslated(context, 'ar1')}",
+      c2: "2. ${getTranslated(context, 'ar2')}",
+      c3: "3. ${getTranslated(context, 'ar3')}",
       link: "https://extension.umn.edu/plant-diseases/cedar-apple-rust",
     );
   }

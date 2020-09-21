@@ -3,6 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fypapp/main.dart';
+import 'package:fypapp/screens/classes/language.dart';
+import 'package:fypapp/screens/localization/demo_localizaton.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plant_list.dart';
 import 'package:fypapp/utilities/disease_list.dart';
 import 'package:fypapp/utilities/styles.dart';
@@ -20,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool loading = false;
   List _output;
   File _image;
+  String n;
   //FileImage img;
   double imageWidth = 100.0;
   double imageHeight = 100.0;
@@ -126,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return AlertDialog(
             title: Text(
               //S.of(context).pick_an_option,
-              "Pick an option",
+              getTranslated(context, 'pick_an_option'),
               //style: TextStyles.TitleBlackText,
             ),
             content: SingleChildScrollView(
@@ -138,16 +143,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     title: Text(
                         //S.of(context).gallery,
-                        "Upload Picture"),
+                        getTranslated(context, 'upload_picture')),
                     onTap: () {
                       openGallery(context);
                     },
                   ),
                   ListTile(
                     leading: Icon(Icons.camera_alt),
-                    title: Text(
-                        //S.of(context).camera,
-                        "Snap Picture"),
+                    title: Text(getTranslated(context, 'snap_picture')),
                     onTap: () {
                       openCamera(context);
                     },
@@ -166,7 +169,8 @@ class _HomeScreenState extends State<HomeScreen> {
         model: "SSDMobileNet",
         imageMean: 127.5,
         imageStd: 127.5,
-        threshold: 0.4,
+        threshold: 0.5,
+        numBoxesPerBlock: 1,
         asynch: true);
     setState(() {
       _output = output;
@@ -190,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // if (_output = null) return [];
     // if (imageWidth == null || imageHeight == null) return [];
     double factorX = screen.width;
-    double factorY = (imageHeight / imageHeight) * screen.width;
+    double factorY = imageHeight / imageHeight * screen.width;
 
     Color blue = Colors.blue;
 
@@ -221,6 +225,13 @@ class _HomeScreenState extends State<HomeScreen> {
         [];
   }
 
+  void _changeLanguage(Language language) async {
+    print(language.languageCode);
+    Locale _temp = await setLocale(language.languageCode);
+
+    MyApp.setLocale(context, _temp);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -230,8 +241,10 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> stackChildren = [];
 
     stackChildren.add(Positioned(
-        top: 200.0,
-        // left: 0.0,
+        //top: 100.0,
+        left: 0,
+        //right: 0,
+        //height: size.height / 1.5,
         width: size.width,
         child: Container(
           child: Column(
@@ -243,30 +256,47 @@ class _HomeScreenState extends State<HomeScreen> {
               //   height: hei * 0.1,
               // ),
               _image == null
-                  ? Text("No image selected")
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 200.0),
+                      //padding: const EdgeInsets.all(200),
+                      child: Text(getTranslated(context, 'no_image')),
+                    )
                   : Image.file(
                       _image,
-                      width: 50,
-                      height: 50,
+                      //width: wid,
+                      //height: 300,
                     ),
               _output != null
-                  ? RaisedButton(
-                      color: Colors.red,
-                      onPressed: () {
-                        for (int i = 0; i < diseaseList.length; i++) {
-                          if (diseaseList[i]['title'] ==
-                              _output[0]["detectedClass"]) {
-                            DiseaseNavigator.gotoPlant(
-                                context, diseaseList[i]['onTap']);
-                          } else {
-                            print("title not found");
-                          }
-                        }
-                      },
-                      child: Text(
-                        "${_output[0]["detectedClass"]}",
-                        style: TextStyles.DiseaseTitle,
-                      ),
+                  ? Column(
+                      children: <Widget>[
+                        RaisedButton(
+                          color: Colors.red,
+                          onPressed: () {
+                            for (int i = 0; i < diseaseList.length; i++) {
+                              if (diseaseList[i]['title'] ==
+                                  _output[0]["detectedClass"]) {
+                                DiseaseNavigator.gotoPlant(
+                                    context, diseaseList[i]['onTap']);
+                                //n = diseaseList[i]['diseaseName'];
+                                print(n);
+                              } else {
+                                print("title not found");
+                              }
+                            }
+                          },
+                          child: Text(
+                            "${_output[0]["detectedClass"]}",
+                            style: TextStyles.DiseaseTitle,
+                          ),
+                        ),
+                        // Padding(
+                        //   padding: EdgeInsets.only(top: 20),
+                        //   child: Text(
+                        //     "$n",
+                        //     style: TextStyles.DiseaseTitle,
+                        //   ),
+                        // ),
+                      ],
                     )
                   : //Text("Nothing"),
                   Container(),
@@ -298,82 +328,122 @@ class _HomeScreenState extends State<HomeScreen> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.green,
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(Icons.more_vert), onPressed: _toggleDropdown),
-                OverlayContainer(
-                  show: _dropdownShown,
-                  // Let's position this overlay to the right of the button.
-                  position: OverlayContainerPosition(-50.0, 1.0),
-
-                  // The content inside the overlay.
-                  child: Container(
-                      height: hei * 0.12,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(
-                        top: 0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                            color: Colors.grey[300],
-                            blurRadius: 3,
-                            spreadRadius: 6,
-                          )
-                        ],
-                      ),
-                      child: Column(
-                        children: <Widget>[
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  _dropdownShown = !_dropdownShown;
-                                });
-                              },
-                              child: Text(
-                                "Language",
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.purple,
-                            thickness: 10.0,
-                            height: 20.0,
-                          ),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  _dropdownShown = !_dropdownShown;
-                                });
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            PlantHomeScreen()));
-                              },
-                              child: Text(
-                                "Disease    ",
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ),
-                          )
-                        ],
-                      )),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: DropdownButton(
+                  icon: Icon(Icons.language, color: Colors.white),
+                  underline: SizedBox(),
+                  items: Language.languageList()
+                      .map<DropdownMenuItem<Language>>(
+                          (lang) => DropdownMenuItem(
+                              value: lang,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Text(
+                                    lang.name,
+                                    style: TextStyle(fontSize: 30),
+                                  ),
+                                  Text(lang.flag)
+                                ],
+                              )))
+                      .toList(),
+                  onChanged: (Language language) {
+                    _changeLanguage(language);
+                  },
                 ),
-              ],
-            ),
-          ),
+              ),
+              IconButton(
+                  icon: Icon(Icons.arrow_forward_ios),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PlantHomeScreen()));
+                  })
+            ],
+          )
         ],
+        // actions: <Widget>[
+        //   Padding(
+        //     padding: const EdgeInsets.all(0),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: <Widget>[
+        //         IconButton(
+        //             icon: Icon(Icons.more_vert), onPressed: _toggleDropdown),
+        //         OverlayContainer(
+        //           show: _dropdownShown,
+        //           // Let's position this overlay to the right of the button.
+        //           position: OverlayContainerPosition(-50.0, 1.0),
+
+        //           // The content inside the overlay.
+        //           child: Container(
+        //               height: hei * 0.12,
+        //               padding: EdgeInsets.all(10),
+        //               margin: EdgeInsets.only(
+        //                 top: 0,
+        //               ),
+        //               decoration: BoxDecoration(
+        //                 color: Colors.white,
+        //                 boxShadow: <BoxShadow>[
+        //                   BoxShadow(
+        //                     color: Colors.grey[300],
+        //                     blurRadius: 3,
+        //                     spreadRadius: 6,
+        //                   )
+        //                 ],
+        //               ),
+        //               child: Column(
+        //                 children: <Widget>[
+        //                   Align(
+        //                     alignment: Alignment.centerLeft,
+        //                     child: InkWell(
+        //                       onTap: () {
+        //                         setState(() {
+        //                           _dropdownShown = !_dropdownShown;
+        //                         });
+        //                       },
+        //                       child: Text(
+        //                         "Language",
+        //                         style: TextStyle(fontSize: 15),
+        //                       ),
+        //                     ),
+        //                   ),
+        //                   Divider(
+        //                     color: Colors.purple,
+        //                     thickness: 10.0,
+        //                     height: 20.0,
+        //                   ),
+        //                   Align(
+        //                     alignment: Alignment.centerLeft,
+        //                     child: InkWell(
+        //                       onTap: () {
+        //                         setState(() {
+        //                           _dropdownShown = !_dropdownShown;
+        //                         });
+        //                         Navigator.push(
+        //                             context,
+        //                             MaterialPageRoute(
+        //                                 builder: (context) =>
+        //                                     PlantHomeScreen()));
+        //                       },
+        //                       child: Text(
+        //                         "Disease    ",
+        //                         style: TextStyle(fontSize: 15),
+        //                       ),
+        //                     ),
+        //                   )
+        //                 ],
+        //               )),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // ],
       ),
       body: GestureDetector(
         onTap: () {

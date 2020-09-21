@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/pepper/pepper_bacterial.dart';
 import 'package:fypapp/screens/rectangle.dart';
 
@@ -12,7 +13,7 @@ class PepperList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "pp_bs",
-              diseaseName: "Pepper bacterial spot",
+              diseaseName: getTranslated(context, 'pepper_spot'),
               image: "lib/images/pepper/ppbs1.JPG",
               onPress: () {
                 Navigator.push(context,

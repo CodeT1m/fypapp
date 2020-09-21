@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class TTSdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _TTSdiseaseState extends State<TTSdisease> {
       img2: 'lib/images/tomato/tts2.JPG',
       img3: 'lib/images/tomato/tts3.JPG',
       diseaseTitle: "t_ts",
-      diseaseName: "Tomato Target spot",
+      diseaseName: getTranslated(context, 'tomato_target_spot'),
       sName: "Corynespora cassiicola.",
-      c0: "Tomato Target spot is a disease that causes plants to lose their leaves before the fruit has developed.",
-      c1: "1. Practice crop rotation and don’t plant new crops in areas where other disease-prone plants have been located in the past year.",
-      c2: "2. Do not use overhead irrigation; otherwise, it will create conditions for spore production and infection.",
-      c3: "3. Collect and burn as much of the crop as possible when the harvest is complete.",
+      c0: getTranslated(context, 'tts0'),
+      c1: "1. ${getTranslated(context, 'tts1')}",
+      c2: "2. ${getTranslated(context, 'tts2')}",
+      c3: "3. ${getTranslated(context, 'tts3')}",
       link: "https://www.pestnet.org/fact_sheets/tomato_target_spot_163.htm",
     );
   }

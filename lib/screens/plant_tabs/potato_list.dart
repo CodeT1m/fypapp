@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/potato/potato_earlyb.dart';
 import 'package:fypapp/screens/plants/potato/potato_lateb.dart';
 import 'package:fypapp/screens/rectangle.dart';
@@ -13,7 +14,7 @@ class PotatoList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "po_eb",
-              diseaseName: "Potato Early blight",
+              diseaseName: getTranslated(context, 'potato_early_blight'),
               image: "lib/images/potato/poeb1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -22,7 +23,7 @@ class PotatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "po_Lb",
-              diseaseName: "Potato Late blight",
+              diseaseName: getTranslated(context, 'potato_late_blight'),
               image: "lib/images/potato/poLb1.JPG",
               onPress: () {
                 Navigator.push(context,

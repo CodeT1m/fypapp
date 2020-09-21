@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fypapp/screens/home/home_screen.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/utilities/styles.dart';
 
 class Onboard extends StatefulWidget {
@@ -68,13 +69,14 @@ class _OnboardState extends State<Onboard> {
                       alignment: Alignment.centerRight,
                       child: FlatButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => HomeScreen()));
+                          Navigator.pushReplacementNamed(context, "/home");
                         }, //go to plant home page
                         child: Text(
-                          "Skip",
+                          "${getTranslated(context, 'skip')}",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
@@ -94,56 +96,56 @@ class _OnboardState extends State<Onboard> {
                         },
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.all(40.0),
+                            padding: EdgeInsets.all(20.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Center(
                                   child: Image(
                                     image: AssetImage("lib/images/on1.PNG"),
-                                    height: hei * 0.30,
-                                    width: wid * 0.50,
+                                    height: hei * 0.50,
+                                    width: wid * 1,
                                   ),
                                 ),
                                 SizedBox(
-                                  height: hei * 0.08,
+                                  height: hei * 0.03,
                                 ),
                                 Text(
-                                  "Snap a picture",
+                                  "${getTranslated(context, 'snap_a_picture')}",
                                   style: TextStyles.OnboardTitleText,
                                 ),
                                 SizedBox(
                                   height: 15.0,
                                 ),
                                 Text(
-                                  "Take a picture of the diseased plant, or upload one from your gallery.",
+                                  "${getTranslated(context, 'desc1')}",
                                   style: TextStyles.OnBoardSubText,
                                 ),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(40.0),
+                            padding: EdgeInsets.all(20.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Center(
                                   child: Image(
                                     image: AssetImage("lib/images/on2.png"),
-                                    height: hei * 0.30,
-                                    width: wid * 0.50,
+                                    height: hei * 0.50,
+                                    width: wid * 1,
                                   ),
                                 ),
                                 SizedBox(
-                                  height: hei * 0.08,
+                                  height: hei * 0.03,
                                 ),
                                 Text(
-                                  "See results!",
+                                  "${getTranslated(context, 'see_result')}",
                                   style: TextStyles.OnboardTitleText,
                                 ),
-                                SizedBox(height: 30.0),
+                                SizedBox(height: 20.0),
                                 Text(
-                                  "Upload the picture of the diseased plant and wait to see the result.",
+                                  "${getTranslated(context, 'desc2')}",
                                   style: TextStyles.OnBoardSubText,
                                 )
                               ],
@@ -157,20 +159,20 @@ class _OnboardState extends State<Onboard> {
                                 Center(
                                   child: Image(
                                     image: AssetImage("lib/images/on3.PNG"),
-                                    height: hei * 0.40,
+                                    height: hei * 0.5,
                                     width: wid * 1,
                                   ),
                                 ),
                                 SizedBox(
-                                  height: hei * 0.05,
+                                  height: hei * 0.03,
                                 ),
                                 Text(
-                                  "Get a new experience \n of imgination",
+                                  "${getTranslated(context, 'check_more')}",
                                   style: TextStyles.OnboardTitleText,
                                 ),
                                 SizedBox(height: 15.0),
                                 Text(
-                                  "Search to see more plant diseases and how to control them",
+                                  "${getTranslated(context, 'desc3')}",
                                   style: TextStyles.OnBoardSubText,
                                 )
                               ],
@@ -198,7 +200,7 @@ class _OnboardState extends State<Onboard> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Text(
-                                      "Next",
+                                      "${getTranslated(context, 'next')}",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 22.0),
                                     ),
@@ -225,14 +227,15 @@ class _OnboardState extends State<Onboard> {
                 color: Colors.white,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.pushReplacementNamed(context, "/home");
                   },
                   child: Center(
                     child: Padding(
                       padding: EdgeInsets.only(bottom: 10.0),
                       child: Text(
-                        "START DIAGNOSIS",
+                        "${getTranslated(context, 'start_diagnosis')}",
                         style: TextStyle(
                           color: Color(0xFF5B16D0),
                           fontSize: 20.0,

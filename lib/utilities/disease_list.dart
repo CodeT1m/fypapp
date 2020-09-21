@@ -115,8 +115,10 @@ List<Map> diseaseList = [
 class DiseaseNavigator {
   static gotoPlant(BuildContext context, String route) {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      Timer(Duration(seconds: 1),
-          () => Navigator.popAndPushNamed(context, route));
+      Timer(
+          Duration(seconds: 1),
+          // () => Navigator.popAndPushNamed(context, route));
+          () => Navigator.pushNamed(context, route));
     });
   }
 }
