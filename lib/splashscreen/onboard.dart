@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fypapp/screens/home/home_screen.dart';
 import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/utilities/styles.dart';
 

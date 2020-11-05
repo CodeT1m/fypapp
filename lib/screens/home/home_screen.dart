@@ -5,13 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fypapp/main.dart';
 import 'package:fypapp/screens/classes/language.dart';
-import 'package:fypapp/screens/localization/demo_localizaton.dart';
 import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plant_list.dart';
 import 'package:fypapp/utilities/disease_list.dart';
 import 'package:fypapp/utilities/styles.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:overlay_container/overlay_container.dart';
+
 import 'package:tflite/tflite.dart';
 import 'package:camera/camera.dart';
 
