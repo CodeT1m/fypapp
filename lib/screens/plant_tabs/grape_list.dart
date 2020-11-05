@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/grape/grape_blackmeasles.dart';
 import 'package:fypapp/screens/plants/grape/grape_blackrot.dart';
 import 'package:fypapp/screens/plants/grape/grape_leafblight.dart';
@@ -13,7 +14,7 @@ class GrapeList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "g_ebm",
-              diseaseName: "Grape Esca (Black measles)",
+              diseaseName: getTranslated(context, 'grape_esca'),
               image: "lib/images/grape/gebm1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -22,7 +23,7 @@ class GrapeList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "g_br",
-              diseaseName: "Grape Black rot",
+              diseaseName: getTranslated(context, 'grape_black_rot'),
               image: "lib/images/grape/gbr1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -31,7 +32,7 @@ class GrapeList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "g_Lb",
-              diseaseName: "Grape Leaf blight",
+              diseaseName: getTranslated(context, 'grape_leaf_blight'),
               image: "lib/images/grape/gLb1.JPG",
               onPress: () {
                 Navigator.push(context,

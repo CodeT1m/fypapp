@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class TOMLMdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _TOMLMdiseaseState extends State<TOMLMdisease> {
       img2: 'lib/images/tomato/tomLm2.JPG',
       img3: 'lib/images/tomato/tomLm3.JPG',
       diseaseTitle: "tom_Lm",
-      diseaseName: "Tomato Leaf Mold",
+      diseaseName: getTranslated(context, 'tomato_late_mold'),
       sName: "Passalora fulva.",
-      c0: "Tomato leaf mold is a disease caused by a fungal plant pathogen called \'Passalora fulva\'.",
-      c1: "1. Space plants to provide good air movement between rows and individual plants.",
-      c2: "2. Use drip irrigation and avoid watering foliage.",
-      c3: "3. Remove crop residue at the end of the season. Burn it or bury it away from tomato production areas.",
+      c0: getTranslated(context, 'tomlm0'),
+      c1: "1. ${getTranslated(context, 'tomlm1')}",
+      c2: "2. ${getTranslated(context, 'tomlm2')}",
+      c3: "3. ${getTranslated(context, 'tomlm3')}",
       link: "https://extension.umn.edu/diseases/leaf-mold-tomato",
     );
   }

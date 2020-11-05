@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class PBSdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _PBSdiseaseState extends State<PBSdisease> {
       img2: 'lib/images/peach/pbs2.JPG',
       img3: 'lib/images/peach/pbs3.JPG',
       diseaseTitle: "pbs",
-      diseaseName: "Peach bacterial spot",
+      diseaseName: getTranslated(context, 'peach_spot'),
       sName: "Xanthomonas camperis pv. pruni.",
-      c0: "Peach bacterial spot is a common disease on older peach trees and nectarines caused by the bacterium \'Xanthomonas camperis pv. pruni\'.",
-      c1: "1. Keep your peach trees healthy by properly pruning out any diseased or dead limbs and fertilize and water as necessary.",
-      c2: "2. Too much nitrogen can aggravate the disease.",
-      c3: "3. Plant resistant cultivars.",
+      c0: getTranslated(context, 'pbs0'),
+      c1: "1. ${getTranslated(context, 'pbs1')}",
+      c2: "2. ${getTranslated(context, 'pbs2')}",
+      c3: "3. ${getTranslated(context, 'pbs3')}",
       link:
           "https://www.gardeningknowhow.com/edible/fruits/peach/bacterial-spot-on-peach-trees.htm",
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/tomato/tomato_bacterial.dart';
 import 'package:fypapp/screens/plants/tomato/tomato_earlyb.dart';
 import 'package:fypapp/screens/plants/tomato/tomato_lateb.dart';
@@ -20,7 +21,7 @@ class TomatoList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "tom_bs",
-              diseaseName: "Tomato Bacterial spot",
+              diseaseName: getTranslated(context, 'tomato_bacterial_spot'),
               image: "lib/images/tomato/tombs1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -29,7 +30,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "tom_eb",
-              diseaseName: "Tomato Early blight",
+              diseaseName: getTranslated(context, 'tomato_early_blight'),
               image: "lib/images/tomato/tomeb1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -38,7 +39,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "tom_Lb",
-              diseaseName: "Tomato Late blight",
+              diseaseName: getTranslated(context, 'tomato_late_blight'),
               image: "lib/images/tomato/tomLb1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -47,7 +48,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "tom_Lm",
-              diseaseName: "Tomato Leaf Mold",
+              diseaseName: getTranslated(context, 'tomato_leaf_mold'),
               image: "lib/images/tomato/tomLm1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -56,7 +57,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "t_sLs",
-              diseaseName: "Tomato Septoria Leaf Spot",
+              diseaseName: getTranslated(context, 'tomato_leaf_spot'),
               image: "lib/images/tomato/tsLs1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -65,7 +66,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "t_tmv",
-              diseaseName: "Tomato Mosaic Virus",
+              diseaseName: getTranslated(context, 'tomato_mosaic_virus'),
               image: "lib/images/tomato/ttmv1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -74,7 +75,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "t_smt",
-              diseaseName: "Tomato Spider Mite",
+              diseaseName: getTranslated(context, 'tomato_spider_mite'),
               image: "lib/images/tomato/tsmt1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -83,7 +84,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "t_ts",
-              diseaseName: "Tomato Target spot",
+              diseaseName: getTranslated(context, 'tomato_target_spot'),
               image: "lib/images/tomato/tts1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -92,7 +93,7 @@ class TomatoList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "t_ty",
-              diseaseName: "Tomato Yellow Leaf Curl Virus",
+              diseaseName: getTranslated(context, 'tomato_yellow'),
               image: "lib/images/tomato/tty1.JPG",
               onPress: () {
                 Navigator.push(context,

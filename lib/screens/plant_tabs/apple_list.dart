@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/apple/apple_blackrot.dart';
 import 'package:fypapp/screens/plants/apple/apple_scab.dart';
 import 'package:fypapp/screens/plants/apple/cedar_applerust.dart';
@@ -13,7 +14,7 @@ class AppleList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "abr",
-              diseaseName: "Apple Black rot",
+              diseaseName: getTranslated(context, 'apple_black_rot'),
               image: "lib/images/apple/abr1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -22,7 +23,7 @@ class AppleList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "as",
-              diseaseName: "Apple - Apple Scab",
+              diseaseName: getTranslated(context, 'apple_scab'),
               image: "lib/images/apple/as1.JPG",
               onPress: () {
                 Navigator.push(context,
@@ -31,7 +32,7 @@ class AppleList extends StatelessWidget {
             ),
             Rectangle(
               diseaseTitle: "ar",
-              diseaseName: "Apple - Cedar Apple Rust",
+              diseaseName: getTranslated(context, 'apple_rust'),
               image: "lib/images/apple/ar1.JPG",
               onPress: () {
                 Navigator.push(context,

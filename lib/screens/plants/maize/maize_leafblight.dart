@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class MLBdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _MLBdiseaseState extends State<MLBdisease> {
       img2: 'lib/images/maize/mLb2.JPG',
       img3: 'lib/images/maize/mLb3.JPG',
       diseaseTitle: "mLb",
-      diseaseName: "Maize Northern leaf blight",
+      diseaseName: getTranslated(context, 'maize_blight'),
       sName: "Exserohilum turcicum.",
-      c0: "Northern corn leaf blight (NCLB) is a foliar disease of corn (maize) caused by \'Exserohilum turcicum\', this disease can cause significant yield loss in susceptible corn hybrids.",
-      c1: "1. Use of resistant varieties is the best way of managing rust diseases: partial resistant and qualitative resistance.",
-      c2: "2. Before planting, choose hybrid varieties with known resistance to maize northern leaf blight. This is the most important way of managing the disease.",
-      c3: "3. During growth, control weeds especially grasses that might be alternative hosts of the fungus.",
+      c0: getTranslated(context, 'mlb0'),
+      c1: "1. ${getTranslated(context, 'mlb1')}",
+      c2: "2. ${getTranslated(context, 'mlb2')}",
+      c3: "3. ${getTranslated(context, 'mlb3')}",
       link:
           "https://www.pestnet.org/fact_sheets/maize_northern_leaf_blight_226.htm",
     );

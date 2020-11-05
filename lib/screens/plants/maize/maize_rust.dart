@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class MCRdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _MCRdiseaseState extends State<MCRdisease> {
       img2: 'lib/images/maize/mcr2.JPG',
       img3: 'lib/images/maize/mcr3.JPG',
       diseaseTitle: "mcr",
-      diseaseName: "Maize Common Rust",
+      diseaseName: getTranslated(context, 'maize_common_rust'),
       sName: "Puccinia sorghi.",
-      c0: "Common rust on corn is caused by the fungus \'Puccinia sorghi\' and it can cause serious losses in yield and quality of sweet corn.",
-      c1: "1. Use of resistant varieties is the best way of managing rust diseases: partial resistant and qualitative resistance.",
-      c2: "2. By foliar applications of fungicides on sweet corn.",
-      c3: "3. Collect the remains of the crop and destroy by burning or burying, and weed around maize plots if Oxalis is common.",
+      c0: getTranslated(context, 'mcr0'),
+      c1: "1. ${getTranslated(context, 'mcr1')}",
+      c2: "2. ${getTranslated(context, 'mcr2')}",
+      c3: "3. ${getTranslated(context, 'mcr3')}",
       link: "https://www.pestnet.org/fact_sheets/maize_common_rust_225.pdf",
     );
   }

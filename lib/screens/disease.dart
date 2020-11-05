@@ -1,11 +1,12 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/utilities/appBarLayout.dart';
 import 'package:fypapp/utilities/config.dart';
 import 'package:fypapp/utilities/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Disease extends StatelessWidget {
+class Disease extends StatefulWidget {
   final String img1,
       img2,
       img3,
@@ -30,6 +31,11 @@ class Disease extends StatelessWidget {
       this.c3,
       this.link});
 
+  @override
+  _DiseaseState createState() => _DiseaseState();
+}
+
+class _DiseaseState extends State<Disease> {
   Future<void> launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -58,9 +64,9 @@ class Disease extends StatelessWidget {
             // Image.asset(img1),
             // Image.asset(img2),
             // Image.asset(img3),
-            AssetImage(img1),
-            AssetImage(img2),
-            AssetImage(img3),
+            AssetImage(widget.img1),
+            AssetImage(widget.img2),
+            AssetImage(widget.img3),
           ],
           autoplay: false, animationCurve: Curves.fastOutSlowIn,
           animationDuration: Duration(milliseconds: 1000),
@@ -106,27 +112,29 @@ class Disease extends StatelessWidget {
                       child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 10),
-                          height: hei * 0.17,
+                          height: hei * 0.19,
                           width: wid * 0.8, //responsible for the center
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                diseaseTitle,
+                                widget.diseaseTitle,
                                 style: TextStyles.DiseaseTitle,
                               ),
                               SizedBox(
                                 height: hei * 0.005,
                               ),
                               Text(
-                                diseaseName,
+                                widget.diseaseName,
+                                // getTranslated(context, widget.diseaseName) ??
+                                //     'default',
                                 style: TextStyles.DiseaseName,
                               ),
                               SizedBox(
                                 height: hei * 0.005,
                               ),
                               Text(
-                                "Casual agents: $sName",
+                                "${getTranslated(context, 'casual_agents')}: ${widget.sName}",
                                 style: TextStyles.DiseaseName,
                               ),
                             ],
@@ -142,30 +150,32 @@ class Disease extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Causes", style: TextStyles.DiseaseTitle),
+                        Text("${getTranslated(context, 'causes')}",
+                            style: TextStyles.DiseaseTitle),
                         SizedBox(
                           height: hei * 0.007,
                         ),
-                        Text(c0, style: TextStyles.DiseaseName),
+                        Text(widget.c0, style: TextStyles.DiseaseName),
                         SizedBox(
                           height: hei * 0.02,
                         ),
-                        Text("Control", style: TextStyles.DiseaseTitle),
+                        Text("${getTranslated(context, 'control')}",
+                            style: TextStyles.DiseaseTitle),
                         SizedBox(
                           height: hei * 0.007,
                         ),
                         // Wrap(
                         //   direction: Axis.vertical,
                         //   children: <Widget>[
-                        Text(c1, style: TextStyles.DiseaseName),
+                        Text(widget.c1, style: TextStyles.DiseaseName),
                         SizedBox(
                           height: hei * 0.005,
                         ),
-                        Text(c2, style: TextStyles.DiseaseName),
+                        Text(widget.c2, style: TextStyles.DiseaseName),
                         SizedBox(
                           height: hei * 0.005,
                         ),
-                        Text(c3, style: TextStyles.DiseaseName),
+                        Text(widget.c3, style: TextStyles.DiseaseName),
 
                         //   ],
                         // ),
@@ -205,13 +215,13 @@ class Disease extends StatelessWidget {
                         Expanded(
                           child: InkWell(
                             onTap: () {
-                              launchURL(link);
+                              launchURL(widget.link);
                             },
                             child: Container(
                               height: hei * 0.090,
                               child: Center(
                                   child: Text(
-                                "For more information\n\t\tClick here.",
+                                "${getTranslated(context, 'for_more_info')}\n\t\t${getTranslated(context, 'click_here')}",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               )),

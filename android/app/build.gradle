@@ -65,6 +65,11 @@ flutter {
 }
 
 dependencies {
+    //implementation 'org.tensorflow:tensorflow-lite-task-vision:0.0.0-nightly'
+    //implementation 'org.tensorflow:tensorflow-lite-task-text:0.0.0-nightly'
+    //implementation 'org.tensorflow:tensorflow-lite-support:0.0.0-nightly'
+    //implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:0.1.100'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'

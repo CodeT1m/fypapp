@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plants/peach/peach_bacterial.dart';
 import 'package:fypapp/screens/rectangle.dart';
 
@@ -11,7 +12,7 @@ class PeachList extends StatelessWidget {
           children: <Widget>[
             Rectangle(
               diseaseTitle: "pbs",
-              diseaseName: "Peach bacterial spot",
+              diseaseName: getTranslated(context, 'peach_spot'),
               image: "lib/images/peach/pbs1.JPG",
               onPress: () {
                 Navigator.push(context,

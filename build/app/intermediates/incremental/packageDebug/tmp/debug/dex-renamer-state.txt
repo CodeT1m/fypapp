@@ -1,6 +1,7 @@
-#Thu Jul 16 19:57:26 SGT 2020
+#Tue Sep 15 12:58:41 SGT 2020
 path.1=classes.dex
 path.0=classes.dex
+renamed.7=classes8.dex
 renamed.6=classes7.dex
 renamed.5=classes6.dex
 renamed.4=classes5.dex
@@ -8,6 +9,7 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+base.7=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_5.dex
 base.6=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_4.dex
 base.5=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_3.dex
 base.4=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
@@ -15,6 +17,7 @@ base.3=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\
 base.2=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
 base.1=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
 base.0=C\:\\Users\\HUNL\\Documents\\PPP\\fypapp\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.7=classes_5.dex
 path.6=classes_4.dex
 path.5=classes_3.dex
 path.4=classes_2.dex

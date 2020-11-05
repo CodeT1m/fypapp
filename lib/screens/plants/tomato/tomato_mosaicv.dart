@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class TTMVdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _TTMVdiseaseState extends State<TTMVdisease> {
       img2: 'lib/images/tomato/ttmv2.JPG',
       img3: 'lib/images/tomato/ttmv3.JPG',
       diseaseTitle: "t_tmv",
-      diseaseName: "Tomato Mosaic Virus",
+      diseaseName: getTranslated(context, 'tomato_mosaic_virus'),
       sName: "Tobamovirus.",
-      c0: "Tomato Mosaic Virus is a plant pathogenic virus which can cause yellowing and stunting of tomato plants resulting in loss of stand and reduced yield.",
-      c1: "1. Avoid using tobacco products around tomato plants, and wash hands after using tobacco products and before working with the plants.",
-      c2: "2. Completely pull up and burn infected plants. Do not compost infected plant material.",
-      c3: "3. Wash your hands with soap and disinfect tools after handling tomato plants to keep the disease from spreading.",
+      c0: getTranslated(context, 'ttmv0'),
+      c1: "1. ${getTranslated(context, 'ttmv1')}",
+      c2: "2. ${getTranslated(context, 'ttmv2')}",
+      c3: "3. ${getTranslated(context, 'ttmv3')}",
       link:
           "https://www.planetnatural.com/pest-problem-solver/plant-disease/mosaic-virus/",
     );

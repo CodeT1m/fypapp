@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class TOMLBdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _TOMLBdiseaseState extends State<TOMLBdisease> {
       img2: 'lib/images/tomato/tomLb2.JPG',
       img3: 'lib/images/tomato/tomLb3.JPG',
       diseaseTitle: "tom_Lb",
-      diseaseName: "Tomato Late blight",
+      diseaseName: getTranslated(context, 'tomato_late_blight'),
       sName: "Phytophthora infestans.",
-      c0: "Tomato late blight is a disease cuased by the oomycete pathogen \'Phytophthora infestans\' and can result in total crop failiure if untreated.",
-      c1: "1. Tomato seed that that has been thoroughly dried is unlikely going to have a seed infection.",
-      c2: "2. Control volunteer potato plants, as infected plants can grow from infected tubers.",
-      c3: "3. Fungicide applications should be made prior to infection when environmental conditions favor disease to be the most effective.",
+      c0: getTranslated(context, 'tomlb0'),
+      c1: "1. ${getTranslated(context, 'tomlb1')}",
+      c2: "2. ${getTranslated(context, 'tomlb2')}",
+      c3: "3. ${getTranslated(context, 'tomlb3')}",
       link:
           "https://extension.umn.edu/diseases/late-blight#:~:text=Late%20blight%20is%20a%20potentially,famine%20of%20the%20late%201840s.",
     );

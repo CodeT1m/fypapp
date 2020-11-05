@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 import 'package:fypapp/screens/plant_tabs/apple.dart';
 import 'package:fypapp/utilities/styles.dart';
 
@@ -27,7 +28,9 @@ class _PlantHomeScreenState extends State<PlantHomeScreen> {
         // centerTitle: true,
         backgroundColor: Colors.green,
         //leading: Icon(Icons.menu),
-        title: Text("Search disease"),
+        title: Text(
+          getTranslated(context, 'search'),
+        ),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.search),

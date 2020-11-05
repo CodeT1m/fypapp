@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,7 +11,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5), () => MyNavigator.goToOnboard(context));
+    Timer(Duration(seconds: 2), () => MyNavigator.goToOnboard(context));
   }
 
   @override
@@ -62,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       CircularProgressIndicator(),
                       Padding(padding: EdgeInsets.only(top: 20.0)),
                       Text(
-                        "Detect First, Eat More",
+                        "Detect First, Eat Healthy",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -80,10 +79,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
 class MyNavigator {
   static void goToOnboard(BuildContext context) {
-    Navigator.pushNamed(context, "/onboard");
+    //Navigator.pushNamed(context, "/onboard");
+    Navigator.pushReplacementNamed(context, "/onboard");
   }
 
-  static void goToHome(BuildContext context) {
-    Navigator.pushNamed(context, "/home");
-  }
+  // static void goToHome(BuildContext context) {
+  //   //Navigator.pushNamed(context, "/home");
+  //   Navigator.pushReplacementNamed(context, "/home");
+  // }
 }

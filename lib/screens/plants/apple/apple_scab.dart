@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fypapp/screens/disease.dart';
+import 'package:fypapp/screens/localization/localization_constants.dart';
 
 class ASdisease extends StatefulWidget {
   @override
@@ -14,12 +15,12 @@ class _ASdiseaseState extends State<ASdisease> {
       img2: 'lib/images/apple/as2.JPG',
       img3: 'lib/images/apple/as3.JPG',
       diseaseTitle: "as",
-      diseaseName: "Apple - Apple Scab",
+      diseaseName: getTranslated(context, 'apple_scab'),
       sName: "Venturia inaequalis",
-      c0: "Apple Scab is caused by the fungus \'Venturia inaequalis\', which spreads by airborne spores.",
-      c1: "1. Sanitation and resistance breeding.",
-      c2: "2. Fungicide or biocontrol tratments to prevent the spread.",
-      c3: "3. Destroy infected leaves or fruits to reduce number of fungal spores.",
+      c0: getTranslated(context, 'as0'),
+      c1: "1. ${getTranslated(context, 'as1')}",
+      c2: "2. ${getTranslated(context, 'as2')}",
+      c3: "3. ${getTranslated(context, 'as3')}",
       link:
           "https://www.planetnatural.com/pest-problem-solver/plant-disease/apple-scab/",
     );
